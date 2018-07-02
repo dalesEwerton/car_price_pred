@@ -1,0 +1,4 @@
+"0","#Defininindo o particionamento dos dados"
+"0","partition <- createDataPartition(y=data$MSRP, p=.8, list=FALSE)"
+"0","fit_data <- data[partition,]"
+"0","test_data <- data[-partition,]"

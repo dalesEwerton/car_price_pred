@@ -1,0 +1,6 @@
+"0","for(i in 0:length(test_data)) {"
+"0","  atual_car <- test_data[i]"
+"0"," "
+"0","  cluster_similarity(atual_car, fit_data[i], similarity=""jaccard"", method=""independence"")"
+"0","  "
+"0","}"

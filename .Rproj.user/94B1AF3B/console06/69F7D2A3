@@ -1,0 +1,7 @@
+]0;/home/dales/Documents/IATarefa]0;IATarefa[01;32mdales@dales[00m:[01;34m~/Documents/IATarefa[00m$ [K]0;IATarefa[01;32mdales@dales[00m:[01;34m~/Documents/IATarefa[00m$ git [K[K[Kl[K[Kls
+]0;ls --color=autocar_prices_pred.nb.html  car_prices_pred.Rmd  [0m[01;34mdata[0m  IATarefa.Rproj
+]0;/home/dales/Documents/IATarefa]0;IATarefa: ls[01;32mdales@dales[00m:[01;34m~/Documents/IATarefa[00m$ git init
+]0;git initInitialized empty Git repository in /home/dales/Documents/IATarefa/.git/
+]0;/home/dales/Documents/IATarefa]0;IATarefa: git[01;32mdales@dales[00m:[01;34m~/Documents/IATarefa[00m$ git remote add origin https://github.com/dalesEwerton/car_price_pred.git
+]0;git remote add origin https://github.com/dalesEwerton/car_price_pred.git]0;/home/dales/Documents/IATarefa]0;IATarefa: git[01;32mdales@dales[00m:[01;34m~/Documents/IATarefa[00m$ git commit[K[K[K[K[K[Kadd --a
+]0;git add --a]0;/home/dales/Documents/IATarefa]0;IATarefa: git[01;32mdales@dales[00m:[01;34m~/Documents/IATarefa[00m$ git commit -m "First commit, [K[K[K[K[K[K[K[K[K[K[K[K[K[KQuesto 1 w [K[Ke inicio da 2" -a
