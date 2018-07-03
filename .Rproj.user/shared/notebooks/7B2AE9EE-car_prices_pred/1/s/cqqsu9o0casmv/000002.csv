@@ -26,3 +26,4 @@ cols(
   MSRP = col_integer()
 )
 "
+"0","data <- na.omit(data)"

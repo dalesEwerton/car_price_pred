@@ -15,6 +15,7 @@ library(clusteval)
 library(readr)
 
 data <- read_csv("data/data.csv")
+data <- na.omit(data)
 ```
 
 
@@ -34,20 +35,22 @@ test_data <- data[-partition,]
 
 ```{r, echo=TRUE, warning=FALSE}
 
-for(i in 1:length(test_data)) {
+test_data$price_pred <- test_data$MSRP
+
+for(i in 1:length(test_data$MSRP)) {
   atual_car <- test_data[i,]
- 
-  for(j in 1:length(fit_data)){
-    
+  fit_data$similarity <- 0
+  
+  for(j in 1:length(fit_data$MSRP)){
     fit_car <- fit_data[j,]
     similarity_count <- 0
     number_of_atributes <- 16
     
-    if(atual_car$Make == fit_car$Make) {
+    if( atual_car$Make != "N/A" && atual_car$Make == fit_car$Make) {
       similarity_count <- similarity_count + 1
     }
     
-    if(atual_car$Model == fit_car$Model) {
+    if( atual_car$Model != "N/A" && atual_car$Model == fit_car$Model) {
       similarity_count <- similarity_count + 1
     }
     
@@ -55,23 +58,23 @@ for(i in 1:length(test_data)) {
       similarity_count <- similarity_count + 1
     }
     
-    if(atual_car$`Engine Fuel Type` == fit_car$`Engine Fuel Type`) {
+    if(atual_car$`Engine Fuel Type` != "N/A" && atual_car$`Engine Fuel Type` == fit_car$`Engine Fuel Type`) {
       similarity_count <- similarity_count + 1
     }
     
-    if(atual_car$`Engine HP` == fit_car$`Engine HP`) {
+    if(atual_car$`Engine HP` != "N/A" && atual_car$`Engine HP` == fit_car$`Engine HP`) {
       similarity_count <- similarity_count + 1
     }
     
-    if(atual_car$`Engine Cylinders` == fit_car$`Engine Cylinders`) {
+    if(atual_car$`Engine Cylinders` != "N/A" && atual_car$`Engine Cylinders` == fit_car$`Engine Cylinders`) {
       similarity_count <- similarity_count + 1
     }
     
-    if(atual_car$`Transmission Type` == fit_car$`Transmission Type`) {
+    if(atual_car$`Transmission Type` != "N/A" && atual_car$`Transmission Type` == fit_car$`Transmission Type`) {
       similarity_count <- similarity_count + 1
     }
     
-    if(atual_car$Driven_Wheels == fit_car$Driven_Wheels) {
+    if(atual_car$Driven_Wheels != "N/A" && atual_car$Driven_Wheels == fit_car$Driven_Wheels) {
       similarity_count <- similarity_count + 1
     }
     
@@ -79,15 +82,15 @@ for(i in 1:length(test_data)) {
       similarity_count <- similarity_count + 1
     }
     
-    if(atual_car$`Market Category` == fit_car$`Market Category`) {
+    if(atual_car$`Market Category` != "N/A" && atual_car$`Market Category` == fit_car$`Market Category`) {
       similarity_count <- similarity_count + 1
     }
     
-    if(atual_car$`Vehicle Size` == fit_car$`Vehicle Size`) {
+    if(atual_car$`Vehicle Size` != "N/A" && atual_car$`Vehicle Size` == fit_car$`Vehicle Size`) {
       similarity_count <- similarity_count + 1
     }
     
-    if(atual_car$`Vehicle Style` == fit_car$`Vehicle Style`) {
+    if(atual_car$`Vehicle Style` != "N/A" && atual_car$`Vehicle Style` == fit_car$`Vehicle Style`) {
       similarity_count <- similarity_count + 1
     }
     
@@ -104,9 +107,18 @@ for(i in 1:length(test_data)) {
     }
     
     jaccard_similarity <- (similarity_count/number_of_atributes)
-    print(jaccard_similarity)
+    fit_data$similarity[j] <- jaccard_similarity
   }
   
+  fit_data <- fit_data[order(fit_data$similarity, decreasing=FALSE), ]
+  
+  #Predição baseada em aproximadamente 1% dos carros mais semelhantes
+  similaries <- fit_data$MSRP[0:90]
+  media <- mean(similaries)
+  test_data$price_pred[i] <- media
+  fit_data$similarity <- NULL
+  
+  print(i)
 }
 ```
 

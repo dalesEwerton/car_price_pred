@@ -5,3 +5,67 @@
 ]0;/home/dales/Documents/IATarefa]0;IATarefa: git[01;32mdales@dales[00m:[01;34m~/Documents/IATarefa[00m$ git remote add origin https://github.com/dalesEwerton/car_price_pred.git
 ]0;git remote add origin https://github.com/dalesEwerton/car_price_pred.git]0;/home/dales/Documents/IATarefa]0;IATarefa: git[01;32mdales@dales[00m:[01;34m~/Documents/IATarefa[00m$ git commit[K[K[K[K[K[Kadd --a
 ]0;git add --a]0;/home/dales/Documents/IATarefa]0;IATarefa: git[01;32mdales@dales[00m:[01;34m~/Documents/IATarefa[00m$ git commit -m "First commit, [K[K[K[K[K[K[K[K[K[K[K[K[K[KQuesto 1 w [K[Ke inicio da 2" -a
+]0;git commit -m "Questo 1 e inicio da 2" -a[master (root-commit) 481c302] Questo 1 e inicio da 2
+ 48 files changed, 13967 insertions(+)
+ create mode 100644 .Rproj.user/94B1AF3B/console06/69F7D2A3
+ create mode 100644 .Rproj.user/94B1AF3B/console06/69F7D2A3.env
+ create mode 100644 .Rproj.user/94B1AF3B/console06/INDEX001
+ create mode 100644 .Rproj.user/94B1AF3B/sources/prop/DD227F25
+ create mode 100644 .Rproj.user/94B1AF3B/sources/prop/INDEX
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/17F1C985-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/214A867B-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/2C930291-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/3621D04E-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/43D278F
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/43D278F-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/46733E8F-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/4DFF6533-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/6065CA8B-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/6D1EC930-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/6E398260-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/8922F430-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/9D1655BD-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/BFA68A0D-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/C2693EFB-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/CE33BCF-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/E4139769-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/E8C47BCF-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/F55510B0-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/F5CECEB5-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/FC068B37
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/FC068B37-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/FC2DE65-contents
+ create mode 100644 .Rproj.user/94B1AF3B/sources/s-2EA9553F/lock_file
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/94B1AF3B2EA9553F/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/94B1AF3B2EA9553F/co5obl73yowpq/000006.csv
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/94B1AF3B2EA9553F/cqqsu9o0casmv/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/94B1AF3B2EA9553F/ctz5qaoj89y4b/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/94B1AF3BA0606468/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/94B1AF3BA0606468/co5obl73yowpq/000004.csv
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/94B1AF3BA0606468/ctu9jhm8o7y3p/000006.csv
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/94B1AF3BA0606468/ctz5qaoj89y4b/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/s/co5obl73yowpq/000004.csv
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/s/co5obl73yowpq/000005.error
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/s/cqqsu9o0casmv/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/7B2AE9EE-car_prices_pred/1/s/ctz5qaoj89y4b/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
+ create mode 100644 .Rproj.user/shared/notebooks/paths
+ create mode 100644 IATarefa.Rproj
+ create mode 100644 car_prices_pred.Rmd
+ create mode 100644 car_prices_pred.nb.html
+ create mode 100644 data/data.csv
+]0;/home/dales/Documents/IATarefa]0;IATarefa: git[01;32mdales@dales[00m:[01;34m~/Documents/IATarefa[00m$ git a[Kpush ro[K[Korug[K[Kigin master
+]0;git push origin mastererror: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': dales  esEwerton
+error: cannot run rpostback-askpass: No such file or directory
+Password for 'https://dalesEwerton@github.com': 
+Counting objects: 44, done.
+Delta compression using up to 8 threads.
+Compressing objects:   2% (1/35)   Compressing objects:   5% (2/35)   Compressing objects:   8% (3/35)   Compressing objects:  11% (4/35)   Compressing objects:  14% (5/35)   Compressing objects:  17% (6/35)   Compressing objects:  20% (7/35)   Compressing objects:  22% (8/35)   Compressing objects:  25% (9/35)   Compressing objects:  28% (10/35)   Compressing objects:  31% (11/35)   Compressing objects:  34% (12/35)   Compressing objects:  37% (13/35)   Compressing objects:  40% (14/35)   Compressing objects:  42% (15/35)   Compressing objects:  45% (16/35)   Compressing objects:  48% (17/35)   Compressing objects:  51% (18/35)   Compressing objects:  54% (19/35)   Compressing objects:  57% (20/35)   Compressing objects:  60% (21/35)   Compressing objects:  62% (22/35)   Compressing objects:  65% (23/35)   Compressing objects:  68% (24/35)   Compressing objects:  71% (25/35)   Compressing objects:  74% (26/35)   Compressing objects:  77% (27/35)   Compressing objects:  80% (28/35)   Compressing objects:  82% (29/35)   Compressing objects:  85% (30/35)   Compressing objects:  88% (31/35)   Compressing objects:  91% (32/35)   Compressing objects:  94% (33/35)   Compressing objects:  97% (34/35)   Compressing objects: 100% (35/35)   Compressing objects: 100% (35/35), done.
+Writing objects:   2% (1/44)   Writing objects:   4% (2/44)   Writing objects:   6% (3/44)   Writing objects:   9% (4/44)   Writing objects:  11% (5/44)   Writing objects:  13% (6/44)   Writing objects:  15% (7/44)   Writing objects:  18% (8/44)   Writing objects:  20% (9/44)   Writing objects:  22% (10/44)   Writing objects:  27% (12/44)   Writing objects:  29% (13/44)   Writing objects:  31% (14/44)   Writing objects:  34% (15/44)   Writing objects:  36% (16/44)   Writing objects:  38% (17/44)   Writing objects:  40% (18/44)   Writing objects:  43% (19/44)   Writing objects:  45% (20/44)   Writing objects:  47% (21/44)   Writing objects:  52% (23/44)   Writing objects:  54% (24/44)   Writing objects:  56% (25/44)   Writing objects:  59% (26/44)   Writing objects:  61% (27/44)   Writing objects:  63% (28/44)   Writing objects:  65% (29/44)   Writing objects:  68% (30/44)   Writing objects:  70% (31/44)   Writing objects:  72% (32/44)   Writing objects:  75% (33/44)   Writing objects:  77% (34/44)   Writing objects:  79% (35/44)   Writing objects:  81% (36/44)   Writing objects:  84% (37/44)   Writing objects:  86% (38/44)   Writing objects:  88% (39/44)   Writing objects:  90% (40/44)   Writing objects:  93% (41/44)   Writing objects:  95% (42/44)   Writing objects:  97% (43/44)   Writing objects: 100% (44/44)   Writing objects: 100% (44/44), 364.41 KiB | 0 bytes/s, done.
+Total 44 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/4)   [Kremote: Resolving deltas:  25% (1/4)   [Kremote: Resolving deltas:  50% (2/4)   [Kremote: Resolving deltas:  75% (3/4)   [Kremote: Resolving deltas: 100% (4/4)   [Kremote: Resolving deltas: 100% (4/4), done.[K
+To https://github.com/dalesEwerton/car_price_pred.git
+ * [new branch]      master -> master
+]0;/home/dales/Documents/IATarefa]0;IATarefa: git[01;32mdales@dales[00m:[01;34m~/Documents/IATarefa[00m$ cçea[K[K[Klear
