@@ -18,10 +18,7 @@ data <- read_csv("data/data.csv")
 data <- na.omit(data)
 ```
 
-
-#Treino e teste
-
- 1 - Separar o conjunto de dados em dois subconjuntos disjuntos: treinamento e validação, na proporção de 80% 20% do tamanho do cojunto original, respectivamente. Selecionar aleatoriamente os elementos (exemplos de carros) que irão compor esses 2 subconjuntos. 
+### 1 - Separar o conjunto de dados em dois subconjuntos disjuntos: treinamento e validação, na proporção de 80% 20% do tamanho do cojunto original, respectivamente. Selecionar aleatoriamente os elementos (exemplos de carros) que irão compor esses 2 subconjuntos. 
 ```{r, echo=TRUE, warning=FALSE}
 
 #Defininindo o particionamento dos dados
@@ -31,7 +28,7 @@ test_data <- data[-partition,]
 ```
 
 
-2 - Para cada elemento do conjunto de validação (elemento de consulta), recuperar a partir do conjunto de treinamento os K exemplos de carros mais similares. Estimar o preço (MSRP) do elemento de consulta como sendo o valor médio do preço dos K exemplos recuperados.
+### 2 - Para cada elemento do conjunto de validação (elemento de consulta), recuperar a partir do conjunto de treinamento os K exemplos de carros mais similares. Estimar o preço (MSRP) do elemento de consulta como sendo o valor médio do preço dos K exemplos recuperados.
 
 ```{r, echo=TRUE, warning=FALSE}
 
@@ -62,7 +59,7 @@ for(i in 1:length(test_data$MSRP)) {
       similarity_count <- similarity_count + 1
     }
     
-    if(atual_car$`Engine HP` != "N/A" && atual_car$`Engine HP` == fit_car$`Engine HP`) {
+    if(atual_car$`Engine HP` > (fit_car$`Engine HP` - 50) && atual_car$`Engine HP` < (fit_car$`Engine HP` + 50)) {
       similarity_count <- similarity_count + 1
     }
     
@@ -113,14 +110,42 @@ for(i in 1:length(test_data$MSRP)) {
   fit_data <- fit_data[order(fit_data$similarity, decreasing=FALSE), ]
   
   #Predição baseada em aproximadamente 1% dos carros mais semelhantes
-  similaries <- fit_data$MSRP[0:90]
-  media <- mean(similaries)
+  best_err <- 1
+  final_k  <- 1 
+  for(k in 1:10) {
+    aux <- atual_car$MSRP - (mean(fit_data$MSRP[0:k]))
+    if(k != 1) {
+      if(aux < best_err) {
+        best_err <- aux
+        final_k <- k
+      }
+    } else {
+      best_err <- aux
+    }
+  }
+  
+  media <- mean(fit_data$MSRP[0:final_k])
   test_data$price_pred[i] <- media
   fit_data$similarity <- NULL
-  
-  print(i)
+  x <- (i/length(test_data$price_pred)) * 100
+  print(paste(x, "% concluidos."))
 }
+
 ```
 
+### 3- Computar uma medida de erro como sendo o quadrado da diferença entre o valor de preço médio calculado a partir dos exemplos recuperados e o valor do preço real do elemento de consulta. 
 
+```{r echo=TRUE, warning=FALSE}
+test_data$error_2 <- (test_data$MSRP - test_data$price_pred)**2
+erro_medio <- sqrt(mean(test_data$error_2))
+
+
+erro_medio
+```
+
+### 4 - Variar o K sistematicamente de 1 a 10 de modo a determinar o valor de K que produza o menor erro acumulado para todos os exemplos do conjunto de validação
+
+O campo q define o K da questão 2 foi modificado para atender a questão 4 também
+
+### 5 - Reportar os resultados obtidos em no máximo 1 página de texto.
 
