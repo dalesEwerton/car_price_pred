@@ -16,6 +16,7 @@ library(readr)
 
 data <- read_csv("data/data.csv")
 data <- na.omit(data)
+data <- data[sample(1:nrow(data)),]
 ```
 
 ### 1 - Separar o conjunto de dados em dois subconjuntos disjuntos: treinamento e validação, na proporção de 80% 20% do tamanho do cojunto original, respectivamente. Selecionar aleatoriamente os elementos (exemplos de carros) que irão compor esses 2 subconjuntos. 
@@ -33,6 +34,7 @@ test_data <- data[-partition,]
 ```{r, echo=TRUE, warning=FALSE}
 
 test_data$price_pred <- test_data$MSRP
+test_data$best_k <- 0
 
 for(i in 1:length(test_data$MSRP)) {
   atual_car <- test_data[i,]
@@ -109,7 +111,6 @@ for(i in 1:length(test_data$MSRP)) {
   
   fit_data <- fit_data[order(fit_data$similarity, decreasing=FALSE), ]
   
-  #Predição baseada em aproximadamente 1% dos carros mais semelhantes
   best_err <- 1
   final_k  <- 1 
   for(k in 1:10) {
@@ -126,6 +127,7 @@ for(i in 1:length(test_data$MSRP)) {
   
   media <- mean(fit_data$MSRP[0:final_k])
   test_data$price_pred[i] <- media
+  test_data$best_k[i] <- final_k
   fit_data$similarity <- NULL
   x <- (i/length(test_data$price_pred)) * 100
   print(paste(x, "% concluidos."))

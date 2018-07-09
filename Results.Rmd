@@ -1,0 +1,55 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r, echo=FALSE}
+library(ggplot2)
+```
+
+
+##Apresentação de resultados
+
+###Erro
+
+```{r echo=FALSE}
+summary(test_data$error_2)
+```
+
+
+####Erro Médio
+
+```{r echo=FALSE}
+erro_medio
+```
+
+Podemos ver um alto erro médio nas previsões utilizando esse método
+
+
+### Predição
+
+```{r, echo=FALSE}
+
+ggplot(test_data, aes(x=price_pred, y= MSRP)) + 
+  geom_point(colour = "blue", alpha = 0.5, 
+             position = position_jitter(width=0.2)) +
+  geom_line() + 
+  labs(x="Predito", y="Observado", title = "Observado vs Predito")
+
+```
+
+
+###Melhor K
+
+#####Melhor K no Caso médio
+
+```{r echo=FALSE}
+as.integer(mean(test_data$best_k))
+```
+#####Melhor K por observação
+
+```{r echo=FALSE}
+
+```
+
