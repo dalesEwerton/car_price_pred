@@ -42,14 +42,10 @@ ggplot(test_data, aes(x=price_pred, y= MSRP)) +
 
 ###Melhor K
 
-#####Melhor K no Caso médio
-
 ```{r echo=FALSE}
 as.integer(mean(test_data$best_k))
 ```
-#####Melhor K por observação
+###Interpretação
 
-```{r echo=FALSE}
-
-```
+As predições seguindo esse modelo não apresentaram boa acuracia, acredito que um modelo linear em que se possa atribuir pesos aos atributos.
 
